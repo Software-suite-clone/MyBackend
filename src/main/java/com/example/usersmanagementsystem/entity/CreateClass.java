@@ -8,14 +8,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 @Entity
-
 public class CreateClass {
 	 @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 	 private String loginuser;
-	 
-	 private String classname;
+	 private String classCode;
+	 private String name;
+	private String classname;
 	 private String section;
 	 private String roomno;
 	 private String subject;
@@ -30,6 +30,18 @@ public class CreateClass {
 	}
 	public void setLoginuser(String loginuser) {
 		this.loginuser = loginuser;
+	}
+	public String getClasscode() {
+		return classCode;
+	}
+	public void setClasscode(String classCode) {
+		this.classCode = classCode;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getClassname() {
 		return classname;
@@ -57,9 +69,11 @@ public class CreateClass {
 	}
 	@Override
 	public String toString() {
-		return "CreateClass [id=" + id + ", loginuser=" + loginuser + ", classname=" + classname + ", section="
-				+ section + ", roomno=" + roomno + ", subject=" + subject + "]";
+		return "CreateClass [id=" + id + ", loginuser=" + loginuser + ", classCode=" + classCode + ", name=" + name
+				+ ", classname=" + classname + ", section=" + section + ", roomno=" + roomno + ", subject=" + subject
+				+ "]";
 	}
+	
 	
 	
 	 

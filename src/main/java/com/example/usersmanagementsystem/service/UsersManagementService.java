@@ -51,7 +51,7 @@ public class UsersManagementService {
             ourUser.setRole(registrationRequest.getRole());
             ourUser.setName(registrationRequest.getName());
             ourUser.setPassword(passwordEncoder.encode(registrationRequest.getPassword()));
-            
+            ourUser.setPhoto(registrationRequest.getPhoto());
             OurUsers savedUser = usersRepo.save(ourUser);
             
             resp.setOurUsers(savedUser);
@@ -80,7 +80,7 @@ public class UsersManagementService {
             
             String jwt = jwtUtils.generateToken(user);
             String refreshToken = jwtUtils.generateRefreshToken(new HashMap<>(), user);
-            
+         response.setOurUsers(user);
             response.setStatusCode(200);
             response.setToken(jwt);
             response.setRefreshToken(refreshToken);

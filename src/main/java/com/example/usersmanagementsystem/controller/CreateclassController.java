@@ -26,6 +26,7 @@ public class CreateclassController {
 	
 	@PostMapping("/createclass")
 	public CreateClass postCreateClass(@RequestBody CreateClass createclass) {
+		createclass.setClasscode(service.generateClassCode(createclass));
 		return service.postCreateClass(createclass);
 	
 
@@ -35,5 +36,6 @@ public class CreateclassController {
 		return service.getClassByloginuser(loginuser);
 		
 	}
+	
 
 }

@@ -23,6 +23,7 @@ public class ReqRes {
     private String role;
     private String email;
     private String password;
+    private byte[] photo;
     private OurUsers ourUsers;
     private List<OurUsers> ourUsersList;
 	public int getStatusCode() {
@@ -90,6 +91,14 @@ public class ReqRes {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
 	}
 	public OurUsers getOurUsers() {
 		return ourUsers;

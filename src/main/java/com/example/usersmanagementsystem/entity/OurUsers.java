@@ -26,10 +26,21 @@ public class OurUsers implements UserDetails {
     private String password;
     private String city;
     private String role;
+   @Lob
+   @Column(name = "photo", columnDefinition = "LONGBLOB")
+	private byte[] photo;
 
+	 
     
-    
-    public Integer getId() {
+    public byte[] getPhoto() {
+	return photo;
+}
+
+public void setPhoto(byte[] photo) {
+	this.photo = photo;
+}
+
+	public Integer getId() {
 		return id;
 	}
 
@@ -106,4 +117,9 @@ public class OurUsers implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+	public boolean isPresent() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 }
