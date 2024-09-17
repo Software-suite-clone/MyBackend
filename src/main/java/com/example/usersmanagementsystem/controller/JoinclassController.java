@@ -27,10 +27,10 @@ public class JoinclassController {
         System.out.println(joinclass);
         return service.postJoinClass(joinclass);
     }
-//@PostMapping("/postdto")
-//public ResponseEntity<JoinCreateClassDTO> postJoincreateclass(@RequestBody JoinCreateClassDTO dto) {
-//	return service.saveJoinCreateClassDTO(dto);
-//}
+@PostMapping("/postdto")
+public ResponseEntity<JoinCreateClassDTO> postJoincreateclass(@RequestBody JoinCreateClassDTO dto) {
+	return service.saveJoinCreateClassDTO(dto);
+}
   
 
     @GetMapping("/getjoinclass/{email}") 
